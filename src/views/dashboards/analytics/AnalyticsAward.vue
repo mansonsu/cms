@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { useTheme } from 'vuetify'
 import triangleDark from '@/assets/images/misc/triangle-dark.png'
 import triangleLight from '@/assets/images/misc/triangle-light.png'
@@ -6,9 +6,7 @@ import trophy from '@/assets/images/misc/trophy.png'
 
 const vuetifyTheme = useTheme()
 const triangleBg = computed(() => {
-  return vuetifyTheme.global.name.value === 'light'
-    ? triangleLight
-    : triangleDark
+  return vuetifyTheme.global.name.value === 'light' ? triangleLight : triangleDark
 })
 </script>
 

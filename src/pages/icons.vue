@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup>
 const iconsList = [
   'mdi-ab-testing',
   'mdi-abacus',

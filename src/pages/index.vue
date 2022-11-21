@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import AnalyticsAward from '@/views/dashboards/analytics/AnalyticsAward.vue'
 import AnalyticsBarCharts from '@/views/dashboards/analytics/AnalyticsBarCharts.vue'
 import AnalyticsDatatable from '@/views/dashboards/analytics/AnalyticsDatatable.vue'
@@ -18,7 +18,6 @@ const totalProfit = {
   change: 42,
   subtitle: 'Weekly Project',
 }
-
 const newProject = {
   title: 'New Project',
   color: 'primary',

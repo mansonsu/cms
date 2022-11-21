@@ -1,7 +1,7 @@
-<script setup lang="ts">
+<script setup>
 import { useTheme } from 'vuetify'
-const vuetifyTheme = useTheme()
 
+const vuetifyTheme = useTheme()
 const authProviders = [
   {
     icon: 'mdi-facebook',

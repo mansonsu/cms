@@ -1,22 +1,31 @@
-<script setup lang="ts">
-import VueApexCharts from 'vue3-apexcharts';
-import { useTheme } from 'vuetify';
+<script setup>
+import VueApexCharts from 'vue3-apexcharts'
+import { useTheme } from 'vuetify'
 
 const vuetifyTheme = useTheme()
-
 const currentTheme = computed(() => vuetifyTheme.current.value.colors)
-
 const series = [
   {
     name: 'Earning',
-    data: [180, 120, 284, 180, 102],
+    data: [
+      180,
+      120,
+      284,
+      180,
+      102,
+    ],
   },
   {
     name: 'Expense',
-    data: [-100, -130, -100, -60, -120],
+    data: [
+      -100,
+      -130,
+      -100,
+      -60,
+      -120,
+    ],
   },
 ]
-
 const chartOptions = computed(() => {
   return {
     chart: {
@@ -33,23 +42,26 @@ const chartOptions = computed(() => {
         right: 0,
         bottom: 5,
       },
-      yaxis: {
-        lines: { show: false },
-      },
+      yaxis: { lines: { show: false } },
     },
     xaxis: {
       labels: { show: false },
       axisTicks: { show: false },
       axisBorder: { show: false },
-      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+      categories: [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+      ],
     },
-    legend: {
-      show: false,
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    colors: [currentTheme.value.secondary, currentTheme.value.error],
+    legend: { show: false },
+    dataLabels: { enabled: false },
+    colors: [
+      currentTheme.value.secondary,
+      currentTheme.value.error,
+    ],
     plotOptions: {
       bar: {
         borderRadius: 4,
@@ -59,24 +71,12 @@ const chartOptions = computed(() => {
       },
     },
     states: {
-      hover: {
-        filter: { type: 'none' },
-      },
-      active: {
-        filter: { type: 'none' },
-      },
+      hover: { filter: { type: 'none' } },
+      active: { filter: { type: 'none' } },
     },
-    yaxis: {
-      labels: {
-        show: false,
-      },
-    },
-    stroke: {
-      lineCap: 'round',
-    },
-    tooltip: {
-      enabled: false,
-    },
+    yaxis: { labels: { show: false } },
+    stroke: { lineCap: 'round' },
+    tooltip: { enabled: false },
   }
 })
 </script>

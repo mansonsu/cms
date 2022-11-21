@@ -1,19 +1,5 @@
-<script lang="ts" setup>
-interface DataItem {
-  responsiveId: string
-  id: number
-  fullName: string
-  post: string
-  email: string
-  city: string
-  start_date: string
-  salary: number
-  age: string
-  experience: string
-  status: number
-}
-
-const data: DataItem[] = [
+<script setup>
+const data = [
   {
     responsiveId: '',
     id: 95,
@@ -119,23 +105,20 @@ const data: DataItem[] = [
     status: 2,
   },
 ]
-
-const status: Record<DataItem['status'], string> = {
+const status = {
   1: 'Current',
   2: 'Professional',
   3: 'Rejected',
   4: 'Resigned',
   5: 'Applied',
 }
-
-const statusColor: Record<typeof status[number], string> = {
+const statusColor = {
   Current: 'primary',
   Professional: 'success',
   Rejected: 'error',
   Resigned: 'warning',
   Applied: 'info',
 }
-
 const headers = [
   'NAME',
   'EMAIL',
@@ -144,7 +127,6 @@ const headers = [
   'AGE',
   'STATUS',
 ]
-
 const usreList = data
 </script>
 

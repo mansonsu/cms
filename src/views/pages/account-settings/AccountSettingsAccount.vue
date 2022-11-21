@@ -1,5 +1,6 @@
-<script lang="ts" setup>
+<script setup>
 import avatar1 from '@/assets/images/avatars/avatar-1.png'
+
 const accountData = {
   avatarImg: avatar1,
   firstName: 'john',
@@ -15,23 +16,16 @@ const accountData = {
   timezone: '(GMT-11:00) International Date Line West',
   currency: 'USD',
 }
-
-const refInputEl = ref<HTMLElement>()
-
+const refInputEl = ref()
 const accountDataLocal = ref(structuredClone(accountData))
 const isAccountDeactivated = ref(false)
-
-const validateAccountDeactivation = [(v: string) => !!v || 'Please confirm account deactivation']
-
+const validateAccountDeactivation = [v => !!v || 'Please confirm account deactivation']
 const resetForm = () => {
   accountDataLocal.value = structuredClone(accountData)
 }
-
-// changeAvatar function
-const changeAvatar = (file: Event) => {
+const changeAvatar = file => {
   const fileReader = new FileReader()
-  const { files } = file.target as HTMLInputElement
-
+  const {files} = file.target
   if (files && files.length) {
     fileReader.readAsDataURL(files[0])
     fileReader.onload = () => {
@@ -45,7 +39,6 @@ const changeAvatar = (file: Event) => {
 const resetAvatar = () => {
   accountDataLocal.value.avatarImg = accountData.avatarImg
 }
-
 const timezones = [
   '(GMT-11:00) International Date Line West',
   '(GMT-11:00) Midway Island',
@@ -87,7 +80,6 @@ const timezones = [
   '(GMT+00:00) Lisbon',
   '(GMT+00:00) London',
 ]
-
 const currencies = [
   'USD',
   'EUR',

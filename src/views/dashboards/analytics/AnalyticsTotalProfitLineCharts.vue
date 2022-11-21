@@ -1,19 +1,25 @@
-<script setup lang="ts">
+<script setup>
 import VueApexCharts from 'vue3-apexcharts'
 import { useTheme } from 'vuetify'
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
-
-const currentTheme = computed(() => { return vuetifyTheme.current.value.colors })
-const variableTheme = computed(() => { return vuetifyTheme.current.value.variables })
-
-const series = [
-  {
-    data: [0, 20, 5, 30, 15, 45],
-  },
-]
-
+const currentTheme = computed(() => {
+  return vuetifyTheme.current.value.colors
+})
+const variableTheme = computed(() => {
+  return vuetifyTheme.current.value.variables
+})
+const series = [{
+  data: [
+    0,
+    20,
+    5,
+    30,
+    15,
+    45,
+  ],
+}]
 const chartOptions = computed(() => {
   return {
     chart: {
@@ -22,14 +28,10 @@ const chartOptions = computed(() => {
     },
     tooltip: { enabled: false },
     grid: {
-      borderColor: `rgba(${hexToRgb(String(variableTheme.value['border-color']))},${variableTheme.value['border-opacity']})`,
+      borderColor: `rgba(${ hexToRgb(String(variableTheme.value['border-color'])) },${ variableTheme.value['border-opacity'] })`,
       strokeDashArray: 6,
-      xaxis: {
-        lines: { show: true },
-      },
-      yaxis: {
-        lines: { show: false },
-      },
+      xaxis: { lines: { show: true } },
+      yaxis: { lines: { show: false } },
       padding: {
         top: -10,
         left: -7,
@@ -50,15 +52,13 @@ const chartOptions = computed(() => {
       strokeWidth: 3,
       colors: ['transparent'],
       strokeColors: 'transparent',
-      discrete: [
-        {
-          size: 5.5,
-          seriesIndex: 0,
-          strokeColor: currentTheme.value.primary,
-          fillColor: currentTheme.value.surface,
-          dataPointIndex: series[0].data.length - 1,
-        },
-      ],
+      discrete: [{
+        size: 5.5,
+        seriesIndex: 0,
+        strokeColor: currentTheme.value.primary,
+        fillColor: currentTheme.value.surface,
+        dataPointIndex: series[0].data.length - 1,
+      }],
       hover: { size: 7 },
     },
     xaxis: {
@@ -66,9 +66,7 @@ const chartOptions = computed(() => {
       axisTicks: { show: false },
       axisBorder: { show: false },
     },
-    yaxis: {
-      labels: { show: false },
-    },
+    yaxis: { labels: { show: false } },
   }
 })
 </script>

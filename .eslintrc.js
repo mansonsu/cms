@@ -4,23 +4,19 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    '@antfu/eslint-config-vue',
+    '.eslintrc-auto-import.json',
     'plugin:vue/vue3-recommended',
     'plugin:import/recommended',
-    'plugin:import/typescript',
     'plugin:promise/recommended',
     'plugin:sonarjs/recommended',
-    'plugin:@typescript-eslint/recommended',
   ],
   parser: 'vue-eslint-parser',
   parserOptions: {
     ecmaVersion: 13,
-    parser: '@typescript-eslint/parser',
     sourceType: 'module',
   },
   plugins: [
     'vue',
-    '@typescript-eslint',
   ],
   ignorePatterns: ['src/@iconify/*.js', 'node_modules', 'dist', '*.d.ts'],
   rules: {
@@ -92,9 +88,7 @@ module.exports = {
 
     // Thanks: https://stackoverflow.com/a/63961972/10796681
     'no-shadow': 'off',
-    '@typescript-eslint/no-shadow': ['error'],
 
-    '@typescript-eslint/consistent-type-imports': 'error',
 
     // Plugin: eslint-plugin-promise
     'promise/always-return': 'off',
@@ -141,8 +135,7 @@ module.exports = {
     'import/resolver': {
       node: {
         extensions: ['.ts', '.js', '.tsx', '.jsx', '.mjs'],
-      },
-      typescript: {},
+      },alias: {'extensions': ['.ts', '.js', '.tsx', '.jsx', '.mjs'], 'map': [["@","./src"],["@core","./src/@core"],["@layouts","./src/@layouts"],["@configured-variables","./src/styles/variables/_template.scss"],["@axios","./src/plugins/axios"],["apexcharts","node_modules/apexcharts-clevision"]]},
     },
   },
 }

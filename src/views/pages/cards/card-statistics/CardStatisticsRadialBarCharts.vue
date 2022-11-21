@@ -1,49 +1,34 @@
-<script setup lang="ts">
-import { hexToRgb } from '@layouts/utils';
-import VueApexCharts from 'vue3-apexcharts';
-import { useTheme } from 'vuetify';
+<script setup>
+import { hexToRgb } from '@layouts/utils'
+import VueApexCharts from 'vue3-apexcharts'
+import { useTheme } from 'vuetify'
 
 const vuetifyTheme = useTheme()
-
 const currentTheme = computed(() => vuetifyTheme.current.value.colors)
 const variableTheme = computed(() => vuetifyTheme.current.value.variables)
-
 const series = [78]
-
 const chartOptions = computed(() => {
   return {
-    chart: {
-      sparkline: {
-        enabled: true,
-      },
-    },
+    chart: { sparkline: { enabled: true } },
     colors: [currentTheme.value.info],
     plotOptions: {
       radialBar: {
         startAngle: -90,
         endAngle: 90,
-        hollow: {
-          size: '65%',
-        },
+        hollow: { size: '65%' },
         dataLabels: {
-          name: {
-            show: false,
-          },
+          name: { show: false },
           value: {
             fontSize: '1.25rem',
             fontWeight: '600',
             offsetY: 0,
-            color: `rgba(${hexToRgb(currentTheme.value['on-surface'])},${variableTheme.value['high-emphasis-opacity']})`,
+            color: `rgba(${ hexToRgb(currentTheme.value['on-surface']) },${ variableTheme.value['high-emphasis-opacity'] })`,
           },
         },
-        track: {
-          background: currentTheme.value.background,
-        },
+        track: { background: currentTheme.value.background },
       },
     },
-    stroke: {
-      lineCap: 'round',
-    },
+    stroke: { lineCap: 'round' },
   }
 })
 </script>

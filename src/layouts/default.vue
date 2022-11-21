@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup>
 import DefaultLayoutWithVerticalNav from './components/DefaultLayoutWithVerticalNav.vue'
 </script>
 

@@ -1,17 +1,15 @@
-<script lang="ts" setup>
+<script setup>
 const isCurrentPasswordVisible = ref(false)
 const isNewPasswordVisible = ref(false)
 const isConfirmPasswordVisible = ref(false)
 const currentPassword = ref('12345678')
 const newPassword = ref('87654321')
 const confirmPassword = ref('87654321')
-
 const passwordRequirements = [
   'Minimum 8 characters long - the more, the better',
   'At least one lowercase character',
   'At least one number, symbol, or whitespace character',
 ]
-
 const serverKeys = [
   {
     name: 'Server Key 1',
@@ -38,42 +36,60 @@ const recentDevices = [
     device: 'HP Spectre 360',
     location: 'New York, NY',
     recentActivity: '28 Apr 2022, 18:20',
-    deviceIcon: { icon: 'mdi-microsoft-windows', color: 'primary' },
+    deviceIcon: {
+      icon: 'mdi-microsoft-windows',
+      color: 'primary',
+    },
   },
   {
     browser: 'Chrome on iPhone',
     device: 'iPhone 12x',
     location: 'Los Angeles, CA',
     recentActivity: '20 Apr 2022, 10:20',
-    deviceIcon: { icon: 'mdi-cellphone', color: 'error' },
+    deviceIcon: {
+      icon: 'mdi-cellphone',
+      color: 'error',
+    },
   },
   {
     browser: 'Chrome on Android',
     device: 'Oneplus 9 Pro',
     location: 'San Francisco, CA',
     recentActivity: '16 Apr 2022, 04:20',
-    deviceIcon: { icon: 'mdi-android', color: 'success' },
+    deviceIcon: {
+      icon: 'mdi-android',
+      color: 'success',
+    },
   },
   {
     browser: 'Chrome on MacOS',
     device: 'Apple iMac',
     location: 'New York, NY',
     recentActivity: '28 Apr 2022, 18:20',
-    deviceIcon: { icon: 'mdi-apple', color: 'secondary' },
+    deviceIcon: {
+      icon: 'mdi-apple',
+      color: 'secondary',
+    },
   },
   {
     browser: 'Chrome on Windows',
     device: 'HP Spectre 360',
     location: 'Los Angeles, CA',
     recentActivity: '20 Apr 2022, 10:20',
-    deviceIcon: { icon: 'mdi-microsoft-windows', color: 'primary' },
+    deviceIcon: {
+      icon: 'mdi-microsoft-windows',
+      color: 'primary',
+    },
   },
   {
     browser: 'Chrome on Android',
     device: 'Oneplus 9 Pro',
     location: 'San Francisco, CA',
     recentActivity: '16 Apr 2022, 04:20',
-    deviceIcon: { icon: 'mdi-android', color: 'success' },
+    deviceIcon: {
+      icon: 'mdi-android',
+      color: 'success',
+    },
   },
 ]
 </script>

@@ -1,11 +1,18 @@
-<script setup lang="ts">
-interface Props {
-  errorCode: string
-  errorTitle: string
-  errorDescription: string
-}
-
-const props = defineProps<Props>()
+<script setup>
+const props = defineProps({
+  errorCode: {
+    type: String,
+    required: true,
+  },
+  errorTitle: {
+    type: String,
+    required: true,
+  },
+  errorDescription: {
+    type: String,
+    required: true,
+  },
+})
 </script>
 
 <template>

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 const salesByCountries = [
   {
     abbr: 'US',
@@ -40,7 +40,6 @@ const salesByCountries = [
     sales: '42k',
     color: 'error',
   },
-
 ]
 </script>
 

@@ -1,10 +1,9 @@
-<script setup lang="ts">
-import type { Anchor } from 'vuetify/lib/components'
+<script setup>
 import avatar1 from '@/assets/images/avatars/avatar-1.png'
 
 const avatarBadgeProps = {
   dot: true,
-  location: 'bottom right' as Anchor,
+  location: 'bottom right',
   offsetX: 3,
   offsetY: 3,
   color: 'success',

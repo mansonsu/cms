@@ -1,17 +1,15 @@
-<script setup lang="ts">
+<script setup>
 import VueApexCharts from 'vue3-apexcharts'
 import { useTheme } from 'vuetify'
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
-
 const options = computed(() => {
   const currentTheme = ref(vuetifyTheme.current.value.colors)
   const variableTheme = ref(vuetifyTheme.current.value.variables)
-
-  const disabledColor = `rgba(${hexToRgb(currentTheme.value['on-surface'])},${variableTheme.value['disabled-opacity']})`
-  const borderColor = `rgba(${hexToRgb(String(variableTheme.value['border-color']))},${variableTheme.value['border-opacity']})`
-
+  const disabledColor = `rgba(${ hexToRgb(currentTheme.value['on-surface']) },${ variableTheme.value['disabled-opacity'] })`
+  const borderColor = `rgba(${ hexToRgb(String(variableTheme.value['border-color'])) },${ variableTheme.value['border-opacity'] })`
+  
   return {
     chart: {
       parentHeightOffset: 0,
@@ -55,7 +53,15 @@ const options = computed(() => {
       active: { filter: { type: 'none' } },
     },
     xaxis: {
-      categories: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+      categories: [
+        'Sun',
+        'Mon',
+        'Tue',
+        'Wed',
+        'Thu',
+        'Fri',
+        'Sat',
+      ],
       tickPlacement: 'on',
       labels: { show: false },
       crosshairs: { opacity: 0 },
@@ -71,14 +77,22 @@ const options = computed(() => {
           colors: disabledColor,
           fontSize: '12px',
         },
-
-        formatter: (value: number) => `${value > 999 ? `${(value / 1000).toFixed(0)}` : value}k`,
+        formatter: value => `${ value > 999 ? `${ (value / 1000).toFixed(0) }` : value }k`,
       },
     },
   }
 })
-
-const series = [{ data: [37, 57, 45, 75, 57, 40, 65] }]
+const series = [{
+  data: [
+    37,
+    57,
+    45,
+    75,
+    57,
+    40,
+    65,
+  ],
+}]
 </script>
 
 <template>

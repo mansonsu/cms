@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import avatar1 from '@/assets/images/avatars/avatar-1.png'
 import avatar2 from '@/assets/images/avatars/avatar-2.png'
 import avatar3 from '@/assets/images/avatars/avatar-3.png'
@@ -16,7 +16,6 @@ const avatars = [
   avatar3,
   avatar4,
 ]
-
 const isCardDetailsVisible = ref(false)
 </script>
 

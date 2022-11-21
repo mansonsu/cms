@@ -1,8 +1,12 @@
-<script lang="ts" setup>
-import type { NavLink } from '@layouts/types';
-import { getComputedNavLinkToProp } from '@layouts/utils';
+<script setup>
+import { getComputedNavLinkToProp } from '@layouts/utils'
 
-const props = defineProps<{ item: NavLink}>()
+const props = defineProps({
+  item: {
+    type: null,
+    required: true,
+  },
+})
 </script>
 
 <template>

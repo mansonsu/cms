@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import americanBank from '@/assets/images/logos/american-bank.png'
 import aws from '@/assets/images/logos/aws.png'
 import citiBank from '@/assets/images/logos/citi-bank.png'
@@ -42,7 +42,6 @@ const deposits = [
     logo: citiBank,
   },
 ]
-
 const withdraws = [
   {
     title: 'Google Adsense',

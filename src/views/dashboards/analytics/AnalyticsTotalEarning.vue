@@ -1,7 +1,8 @@
-<script setup lang="ts">
+<script setup>
 import aviato from '@/assets/images/logos/aviato.png'
 import bitbank from '@/assets/images/logos/bitbank.png'
 import zipcar from '@/assets/images/logos/zipcar.png'
+
 const earnings = [
   {
     avatar: zipcar,

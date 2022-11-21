@@ -1,6 +1,4 @@
-import type { VuetifyOptions } from 'vuetify'
-
-const theme: VuetifyOptions['theme'] = {
+const theme = {
   defaultTheme: 'light',
   themes: {
     light: {
@@ -30,7 +28,6 @@ const theme: VuetifyOptions['theme'] = {
         'grey-800': '#424242',
         'grey-900': '#212121',
       },
-
       variables: {
         'border-color': '#3A3541',
         'medium-emphasis-opacity': 0.68,
@@ -81,5 +78,4 @@ const theme: VuetifyOptions['theme'] = {
     },
   },
 }
-
 export default theme

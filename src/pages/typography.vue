@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import TypographyHeadlines from '@/views/user-interface/typography/TypographyHeadlines.vue'
 import TypographyTexts from '@/views/user-interface/typography/TypographyTexts.vue'
 </script>

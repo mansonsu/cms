@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import BuyNow from '@core/components/BuyNow.vue'
 </script>
 

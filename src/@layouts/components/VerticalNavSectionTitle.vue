@@ -1,7 +1,10 @@
-<script lang="ts" setup>
-import type { NavSectionTitle } from '@layouts/types';
-
-defineProps<{ item: NavSectionTitle }>()
+<script setup>
+const props = defineProps({
+  item: {
+    type: null,
+    required: true,
+  },
+})
 </script>
 
 <template>
